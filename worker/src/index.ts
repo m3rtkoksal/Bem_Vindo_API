@@ -182,12 +182,9 @@ async function handleImage(
     throw new HttpError(400, "chapter_mismatch");
   }
 
-  // {genero} görsel prompt'unda yok. Metin şeması için gelir; prompt'a yazılmaz.
-  void imageRequest.genero;
-
   let prompt: string;
   try {
-    prompt = buildImagePrompt(prompts, scene.prompt, imageRequest.aparencia);
+    prompt = buildImagePrompt(prompts, scene.prompt, imageRequest.aparencia, imageRequest.genero);
   } catch (error) {
     if (error instanceof UnknownPlaceholderError) {
       logError({

@@ -3,7 +3,7 @@
  *
  * Sıra (prompts.json):
  * 1. side_characters anahtarları ({local_woman}, {clerk}, …) tarifleriyle değişir.
- * 2. {aparencia} ve {kiyafet} değişir. {kiyafet} → outfit.
+ * 2. {genero_desc} (m → "a man", f → "a woman"), {aparencia} ve {kiyafet} değişir. {kiyafet} → outfit.
  * 3. style_block sona eklenir.
  * Birleşen metinde {yer_tutucu} kalırsa çağıran 500 döner; sessizce silinmez.
  */
@@ -64,6 +64,7 @@ export function buildImagePrompt(
   config: PromptsFile,
   scenePrompt: string,
   aparencia: string,
+  genero: "m" | "f",
 ): string {
   const withCharacters = scenePrompt.replace(placeholderPattern(), (raw, name: string) => {
     if (Object.prototype.hasOwnProperty.call(config.side_characters, name)) {
@@ -78,7 +79,9 @@ export function buildImagePrompt(
 
   // Fonksiyon döndürmek, aparencia/outfit içindeki $& gibi dizilerin replace kalıbı sayılmasını engeller.
   const appearance = aparencia.trim();
+  const generoDesc = genero === "m" ? "a man" : "a woman";
   const withAppearance = withCharacters
+    .replaceAll("{genero_desc}", () => generoDesc)
     .replaceAll("{aparencia}", () => appearance)
     .replaceAll("{kiyafet}", () => config.outfit);
 
