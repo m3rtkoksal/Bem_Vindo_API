@@ -1,0 +1,6 @@
+# Kopyala: cp .dev.vars.example .dev.vars
+# Gerçek değerleri commit etme.
+# Üretim: wrangler secret put XAI_API_KEY
+#          wrangler secret put DEVICE_TOKENS
+XAI_API_KEY=
+DEVICE_TOKENS=
