@@ -177,7 +177,7 @@
       "chapter_id": "aima-01",
       "page": 10,
       "kind": "side",
-      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at the office entrance, {security_guard} comically searching around the main character for a laptop, {queue_man} pointing at the smartphone in the main character's hand (screen blurred, no text), the main character amused, no logos, light humor."
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at the office entrance, a single security guard, {security_guard}, standing and comically peering around the main character as if searching for a laptop (only one guard in the scene, drawn once), {queue_man} pointing at the smartphone in the main character's hand (screen blurred, no text), the main character amused, no logos, light humor."
     },
     "p12_vinteanos_sidescene": {
       "chapter_id": "aima-01",

@@ -97,7 +97,10 @@ test("genero m/f becomes a man/a woman before aparencia", () => {
 test("side characters come only from placeholders, never inline or yellow", () => {
   const inline = /\b(clerk|guard|driver|local woman|older lady|another woman|second woman)\b/i;
   for (const [key, scene] of Object.entries(prompts.scenes)) {
-    const stripped = scene.prompt.replace(/\{[A-Za-z0-9_]+\}/g, "");
+    // Sayı vurgusu ("a single security guard", "only one guard") izinli; tarif yine placeholder'dan gelir.
+    const stripped = scene.prompt
+      .replace(/\{[A-Za-z0-9_]+\}/g, "")
+      .replace(/a single security guard|only one guard/g, "");
     assert.equal(inline.test(stripped), false, key);
   }
   for (const [name, desc] of Object.entries(prompts.side_characters)) {
