@@ -1,7 +1,7 @@
 # Bem-Vindo – kişisel görsel promptları ve onay metni (TASLAK, Mert onayı bekliyor)
 
 ## Ortak stil (hepsine eklenir)
-Warm comic-book illustration, clean ink outlines, soft cel shading, rich saturated colors, friendly cinematic framing, no text, no logos, no watermarks. No speech bubbles, no captions, no subtitles, no text anywhere in the image. The person in the reference photo is the main character: keep their face, hair, skin tone and glasses/beard clearly recognizable and flattering, same character in every image. Illustration, not photorealistic.
+Warm comic-book illustration, clean ink outlines, soft cel shading, rich saturated colors, friendly cinematic framing, no text, no logos, no watermarks. No speech bubbles, no captions, no subtitles, no text anywhere in the image. Full-bleed edge-to-edge illustration filling the entire frame, no borders, no panel frame, no margins, no side bars. The person in the reference photo is the main character: keep their face, hair, skin tone and glasses/beard clearly recognizable and flattering, same character in every image. Illustration, not photorealistic.
 
 ## Sabit karakter blokları
 - `{aparencia}`: kullanıcı tarifi (saç, gözlük, sakal…).
