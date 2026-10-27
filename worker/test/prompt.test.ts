@@ -93,3 +93,15 @@ test("genero m/f becomes a man/a woman before aparencia", () => {
     assert.equal(man.includes("{genero_desc}"), false);
   }
 });
+
+test("side characters come only from placeholders, never inline or yellow", () => {
+  const inline = /\b(clerk|guard|driver|local woman|older lady|another woman|second woman)\b/i;
+  for (const [key, scene] of Object.entries(prompts.scenes)) {
+    const stripped = scene.prompt.replace(/\{[A-Za-z0-9_]+\}/g, "");
+    assert.equal(inline.test(stripped), false, key);
+  }
+  for (const [name, desc] of Object.entries(prompts.side_characters)) {
+    assert.equal(/yellow|mustard|not wearing/i.test(desc), false, name);
+    assert.match(desc, /wearing/, name);
+  }
+});
