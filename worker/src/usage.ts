@@ -2,9 +2,8 @@
  * Cihaz başına günlük kota.
  * Görsel: 120, sahne: 300 (UTC günü). Sayılar wrangler vars ile gelir.
  *
- * TODO: Kalıcı sayaç yok. Workers KV veya Durable Object bağlanınca
- * anahtar `hash:kind:YYYY-MM-DD` (UTC) olmalı. Ham cihaz token'ı
- * yazılmamalı ve loglanmamalı. Bu yer tutucu kotayı uygulamaz.
+ * Sayaç Workers KV (USAGE) içinde; anahtar `hash:kind:YYYY-MM-DD` (UTC).
+ * Ham cihaz token'ı yazılmaz ve loglanmaz. Aşımda Worker 429 döner.
  */
 
 export type UsageKind = "image" | "scene";
@@ -32,14 +31,43 @@ export function parseDailyLimit(raw: string | undefined, fallback: number): numb
   return value;
 }
 
-export class UnenforcedUsageCounter implements UsageCounter {
-  constructor(
-    private readonly limits: { image: number; scene: number },
-  ) {}
+/** Kalıcı sayaç için gereken KV alt kümesi (testte Map ile taklit edilir). */
+export interface KvLike {
+  get(key: string): Promise<string | null>;
+  put(key: string, value: string, options?: { expirationTtl?: number }): Promise<void>;
+}
 
-  tryConsume(deviceKey: string, kind: UsageKind): Promise<UsageDecision> {
-    // TODO: KV / Durable Object sayacı. deviceKey saklanmaz, loglanmaz.
-    void deviceKey;
-    return Promise.resolve({ allowed: true, limit: this.limits[kind] });
+export function utcDay(now: Date): string {
+  return now.toISOString().slice(0, 10);
+}
+
+/**
+ * Workers KV sayacı. Anahtar `hash:kind:YYYY-MM-DD` (UTC); ham token yazılmaz.
+ * KV atomik değildir; 2 kullanıcı için küçük yarış payı kabul edilir.
+ */
+export class KvUsageCounter implements UsageCounter {
+  private readonly kv: KvLike;
+  private readonly limits: { image: number; scene: number };
+  private readonly now: () => Date;
+
+  constructor(
+    kv: KvLike,
+    limits: { image: number; scene: number },
+    now: () => Date = () => new Date(),
+  ) {
+    this.kv = kv;
+    this.limits = limits;
+    this.now = now;
+  }
+
+  async tryConsume(deviceKey: string, kind: UsageKind): Promise<UsageDecision> {
+    const limit = this.limits[kind];
+    const key = `${deviceKey}:${kind}:${utcDay(this.now())}`;
+    const current = Number((await this.kv.get(key)) ?? "0") || 0;
+    if (current >= limit) {
+      return { allowed: false, limit };
+    }
+    await this.kv.put(key, String(current + 1), { expirationTtl: 60 * 60 * 48 });
+    return { allowed: true, limit };
   }
 }

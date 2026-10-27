@@ -9,7 +9,7 @@ import {
 import {
   DEFAULT_IMAGE_DAILY_LIMIT,
   DEFAULT_SCENE_DAILY_LIMIT,
-  UnenforcedUsageCounter,
+  KvUsageCounter,
   parseDailyLimit,
 } from "./usage.ts";
 import { XaiEditError, editImage } from "./xai.ts";
@@ -204,7 +204,7 @@ async function handleImage(
     throw error;
   }
 
-  const usage = new UnenforcedUsageCounter({
+  const usage = new KvUsageCounter(env.USAGE, {
     image: parseDailyLimit(env.IMAGE_DAILY_LIMIT, DEFAULT_IMAGE_DAILY_LIMIT),
     scene: parseDailyLimit(env.SCENE_DAILY_LIMIT, DEFAULT_SCENE_DAILY_LIMIT),
   });
@@ -255,7 +255,7 @@ async function handleScene(
   requestId: string,
   tokenHash: string,
 ): Promise<Response> {
-  const usage = new UnenforcedUsageCounter({
+  const usage = new KvUsageCounter(env.USAGE, {
     image: parseDailyLimit(env.IMAGE_DAILY_LIMIT, DEFAULT_IMAGE_DAILY_LIMIT),
     scene: parseDailyLimit(env.SCENE_DAILY_LIMIT, DEFAULT_SCENE_DAILY_LIMIT),
   });

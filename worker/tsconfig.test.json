@@ -16,5 +16,5 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "include": ["src/prompt.ts", "src/xai.ts", "test/**/*.ts"]
+  "include": ["src/prompt.ts", "src/xai.ts", "src/usage.ts", "test/**/*.ts"]
 }
