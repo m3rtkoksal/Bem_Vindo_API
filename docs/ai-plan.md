@@ -71,7 +71,7 @@
   1. Her çağrıda **aynı referans foto** + **aynı stil bloğu** + aynı `{aparencia}` + sabit **`{kiyafet}`** ve sabit yan karakter tarifleri (bkz. `image-prompts-draft.md`).
   2. Edit çağrısı 5'e kadar referans görsel kabul ediyor (dokümanda doğrulandı) → 2. referans olarak **bölümün ilk onaylı görseli** (sayfa 1) eklenir; stil ve yüz sabitlenir. Bunun benzerliği gerçekten artırdığı **doğrulanamadı**, testle bakılacak.
   3. **Seed:** okuduğum xAI dokümanında seed parametresi geçmiyor → doğrulanamadı, varsayma.
-  4. Aynı en-boy oranı (3:2) ve tek karakter odaklı kadraj.
+  4. Aynı en-boy oranı (4:5 dikey) ve tek karakter odaklı kadraj.
 - Fotoğraf: bölüm boyunca referans gerektiği için orijinal foto **sadece cihazda** (Keychain/korumalı dosya) tutulur, her çağrıda Worker'a gider; Worker'da yine saklanmaz. Onay metni buna göre ("her sayfa için") güncellendi.
 
 ## 9) Maliyet (2 kullanıcı, 1 bölüm)

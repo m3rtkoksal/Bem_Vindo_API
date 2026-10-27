@@ -26,7 +26,7 @@ test("edit request uses the confirmed image url shape and prompts.json model", (
       url: dataUri,
       type: "image_url",
     },
-    aspect_ratio: "3:2",
+    aspect_ratio: "4:5",
     response_format: "b64_json",
     n: 1,
     user: "abc123",

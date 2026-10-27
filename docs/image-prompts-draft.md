@@ -93,7 +93,7 @@ Using the person in the reference photo as the main character ({aparencia}), wea
 
 ## Teknik notlar
 - Prompt İngilizce gider; {aparencia} metne gömülür (saç/gözlük/sakal gibi kısa tarif). Yüz benzerliği ana olarak referans fotodan gelir.
-- 12 görsel aynı stil bloğuyla üretilir, 3:2 yatay (iOS sahne kartı).
+- 12 görsel aynı stil bloğuyla üretilir, 4:5 dikey (iOS sahne kartı).
 - Gerçek kişi/ünlü, yazı, logo, resmi kurum işareti yok.
 
 ## Onay ekranı metni (TR) – Apple 5.1.2(i)

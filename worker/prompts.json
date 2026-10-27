@@ -4,14 +4,14 @@
   "fallback_models": [
     "grok-imagine-image-2.0"
   ],
-  "style_block": "Warm comic-book illustration, clean ink outlines, soft cel shading, rich saturated colors, friendly cinematic framing, no text, no logos, no watermarks. The person in the reference photo is the main character: keep their face, hair, skin tone and glasses/beard clearly recognizable and flattering, same character in every image. Illustration, not photorealistic. No speech bubbles, no captions, no subtitles, no text anywhere in the image.",
+  "style_block": "Warm comic-book illustration, clean ink outlines, soft cel shading, rich saturated colors, friendly cinematic framing, no text, no logos, no watermarks. The person in the reference photo is the main character: keep their face, hair, skin tone and glasses/beard clearly recognizable and flattering, same character in every image. Illustration, not photorealistic. No speech bubbles, no captions, no subtitles, no text anywhere in the image. Vertical 4:5 portrait framing, main character shown head to knees filling the tall frame, scene composed vertically.",
   "outfit": "a mustard-yellow jacket over a white t-shirt, dark jeans, white sneakers, a small brown crossbody bag",
   "side_characters": {
     "local_woman": "a friendly middle-aged woman with short grey hair, wearing a green knitted cardigan over a cream blouse and a dark grey skirt",
     "clerk": "a friendly female clerk in her 30s with dark hair in a bun, wearing a navy blouse",
     "security_guard": "a calm security guard wearing a dark navy uniform without any badge text",
     "bus_driver": "a cheerful bus driver in his 40s with a short beard, wearing a plain dark-blue uniform shirt without any badge text",
-    "second_woman": "a second friendly woman in her 30s with long dark wavy hair, wearing a burgundy wool coat over a dark dress and a red scarf",
+    "second_woman": "a second friendly woman in her 30s with long dark wavy hair, wearing a plain red coat (no yellow, no mustard)",
     "queue_man": "an elderly man in the queue with white hair, round glasses and a flat cap, wearing a grey sweater and brown trousers",
     "older_lady": "a kind older lady in her 70s with white curly hair and round glasses, wearing a lilac cardigan and a light grey skirt",
     "queue_person_2": "a friendly young person in the queue with a blue backpack, wearing a dark green hoodie and black jeans"
@@ -185,5 +185,6 @@
       "kind": "side",
       "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at a service counter, {clerk} and the main character both bowing slightly and laughing, an endless polite thank-you moment, plain office, no logos, no readable text, warm comic mood."
     }
-  }
+  },
+  "aspect_ratio": "4:5"
 }

@@ -7,7 +7,7 @@
  * - Authorization: Bearer <XAI_API_KEY>
  * - model: prompts.json → grok-imagine-image
  * - referans fotoğraf: image: { url: <data URI>, type: "image_url" }
- * - aspect_ratio "3:2" (bölüm kartı); response_format "b64_json"
+ * - aspect_ratio "4:5" (dikey sahne kartı); response_format "b64_json"
  *   → data[].b64_json, data-URI öneki yok
  * Gözlem: yaklaşık $0.022/görsel, yaklaşık 9 sn.
  * Kaynak: https://docs.x.ai/docs/guides/image-generations
@@ -28,7 +28,7 @@ export interface XaiImageEditBody {
     url: string;
     type: "image_url";
   };
-  aspect_ratio: "3:2";
+  aspect_ratio: "4:5";
   response_format: "b64_json";
   n: 1;
   user: string;
@@ -47,7 +47,7 @@ export function buildImageEditBody(input: {
       url: input.imageDataUri,
       type: "image_url",
     },
-    aspect_ratio: "3:2",
+    aspect_ratio: "4:5",
     response_format: "b64_json",
     n: 1,
     user: input.userHash,

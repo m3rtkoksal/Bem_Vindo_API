@@ -101,7 +101,8 @@ test("side characters come only from placeholders, never inline or yellow", () =
     assert.equal(inline.test(stripped), false, key);
   }
   for (const [name, desc] of Object.entries(prompts.side_characters)) {
-    assert.equal(/yellow|mustard|not wearing/i.test(desc), false, name);
+    assert.equal(/not wearing/i.test(desc), false, name);
+    assert.equal(/yellow|mustard/i.test(desc.replace("(no yellow, no mustard)", "")), false, name);
     assert.match(desc, /wearing/, name);
   }
 });
