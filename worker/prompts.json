@@ -7,14 +7,14 @@
   "style_block": "Warm comic-book illustration, clean ink outlines, soft cel shading, rich saturated colors, friendly cinematic framing, no text, no logos, no watermarks. The person in the reference photo is the main character: keep their face, hair, skin tone and glasses/beard clearly recognizable and flattering, same character in every image. Illustration, not photorealistic. No speech bubbles, no captions, no subtitles, no text anywhere in the image.",
   "outfit": "a mustard-yellow jacket over a white t-shirt, dark jeans, white sneakers, a small brown crossbody bag",
   "side_characters": {
-    "local_woman": "a friendly middle-aged woman with short grey hair and a green cardigan",
-    "clerk": "a friendly female clerk in her 30s with dark hair in a bun and a navy blouse",
-    "security_guard": "a calm security guard in a dark uniform without any badge text",
-    "bus_driver": "a cheerful bus driver in his 40s with a short beard, wearing a plain dark-blue uniform shirt without any badge text",
-    "second_woman": "a second friendly woman in her 30s with long dark wavy hair and a red scarf",
-    "queue_man": "an elderly man in the queue with white hair, round glasses and a flat cap",
-    "older_lady": "a kind older lady in her 70s with white curly hair, round glasses and a lilac cardigan",
-    "queue_person_2": "a friendly young person in the queue with a blue backpack"
+    "local_woman": "a friendly middle-aged woman with short grey hair and a green cardigan, different clothing, not wearing a yellow jacket",
+    "clerk": "a friendly female clerk in her 30s with dark hair in a bun and a navy blouse, different clothing, not wearing a yellow jacket",
+    "security_guard": "a calm security guard in a dark uniform without any badge text, different clothing, not wearing a yellow jacket",
+    "bus_driver": "a cheerful bus driver in his 40s with a short beard, wearing a plain dark-blue uniform shirt without any badge text, different clothing, not wearing a yellow jacket",
+    "second_woman": "a second friendly woman in her 30s with long dark wavy hair and a red scarf, different clothing, not wearing a yellow jacket",
+    "queue_man": "an elderly man in the queue with white hair, round glasses and a flat cap, different clothing, not wearing a yellow jacket",
+    "older_lady": "a kind older lady in her 70s with white curly hair, round glasses and a lilac cardigan, different clothing, not wearing a yellow jacket",
+    "queue_person_2": "a friendly young person in the queue with a blue backpack, different clothing, not wearing a yellow jacket"
   },
   "placeholders": {
     "{genero_desc}": "\"a man\" (genero m) or \"a woman\" (genero f), resolved in code",
