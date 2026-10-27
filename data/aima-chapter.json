@@ -1,0 +1,817 @@
+{
+  "chapter_id": "aima-01",
+  "title_en": "The AIMA appointment",
+  "level": "A1",
+  "locale_target": "pt-PT",
+  "ui_locale": "en",
+  "pricing": "free",
+  "est_minutes": 5,
+  "placeholders": {
+    "{nome}": "character name (required)",
+    "{aparencia}": "optional Appearance field from character creation; runtime expands to ', <text>' or '' if empty",
+    "{genero}": "m|f",
+    "gender_tokens": {
+      "{obrigado}": {
+        "m": "Obrigado",
+        "f": "Obrigada"
+      },
+      "{cansado}": {
+        "m": "cansado",
+        "f": "cansada"
+      }
+    }
+  },
+  "start_page": 1,
+  "pages": [
+    {
+      "id": 1,
+      "narration_en": "You've just moved to Porto. You're standing in the hall of São Bento Station, surrounded by blue-and-white azulejo tiles. Today is your AIMA appointment at the AIMA store on Avenida de França, but you don't know the way. A woman next to you smiles and greets you.",
+      "lines": [
+        {
+          "speaker": "senhora",
+          "pt": "Bom dia!",
+          "en": "Good morning!"
+        }
+      ],
+      "choices": [
+        {
+          "text_pt": "Bom dia! Desculpe...",
+          "text_en": "Good morning! Excuse me...",
+          "target": 5,
+          "correct": true
+        },
+        {
+          "text_pt": "Oi, cara!",
+          "text_en": "Hey, dude! (Brazilian slang)",
+          "target": 1,
+          "correct": false
+        }
+      ],
+      "image": {
+        "key": "saobento_azulejos",
+        "personalized": true
+      },
+      "dead_ends": [
+        {
+          "choice_index": 1,
+          "text_en": "The woman raises an eyebrow: 'Cara? Que cara?' In Portugal 'cara' means 'face'. She laughs and helps you out.",
+          "reteach_pt": "Bom dia! Desculpe...",
+          "reteach_en": "Good morning! Excuse me...",
+          "return": 1,
+          "side_scene": {
+            "narration_en": "The woman frowns, says 'Cara? Que cara?' and walks off toward the platforms, shaking her head with a smile. You look around the hall, a bit embarrassed. Another friendly woman nearby catches your eye and smiles.",
+            "lines": [
+              {
+                "speaker": "senhora",
+                "pt": "Cara? Que cara? Boa sorte!",
+                "en": "Face? What face? Good luck!"
+              },
+              {
+                "speaker": "outra senhora",
+                "pt": "Bom dia!",
+                "en": "Good morning!"
+              }
+            ],
+            "image": {
+              "key": "p1_cara_sidescene",
+              "personalized": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "narration_en": "The woman smiles: 'Sim?' Ask her where the bus stop is.",
+      "lines": [
+        {
+          "speaker": "senhora",
+          "pt": "Sim? Diga.",
+          "en": "Yes? Go ahead."
+        }
+      ],
+      "choices": [
+        {
+          "text_pt": "Onde fica a paragem do autocarro?",
+          "text_en": "Where is the bus stop?",
+          "target": 6,
+          "correct": true
+        },
+        {
+          "text_pt": "Onde fica o ponto de ônibus?",
+          "text_en": "Where is the bus stop? (Brazilian)",
+          "target": 5,
+          "correct": false
+        },
+        {
+          "text_pt": "Onde fica a casa de banho?",
+          "text_en": "Where is the toilet?",
+          "target": 5,
+          "correct": false
+        }
+      ],
+      "image": {
+        "key": "saobento_asking",
+        "personalized": true
+      },
+      "dead_ends": [
+        {
+          "choice_index": 1,
+          "text_en": "The woman: 'Ah, do Brasil? Aqui é autocarro!' Not wrong, but here in Porto people speak European Portuguese.",
+          "reteach_pt": "Onde fica a paragem do autocarro?",
+          "reteach_en": "Where is the bus stop?",
+          "return": 5,
+          "side_scene": {
+            "narration_en": "The woman smiles: 'Ah, do Brasil?' She starts telling you about her cousin in São Paulo. Ten minutes later, you know the whole family tree, but still not the way to the bus.",
+            "lines": [
+              {
+                "speaker": "senhora",
+                "pt": "Ah, do Brasil? A minha prima vive em São Paulo!",
+                "en": "Oh, from Brazil? My cousin lives in São Paulo!"
+              },
+              {
+                "speaker": "senhora",
+                "pt": "Aqui dizemos autocarro e paragem.",
+                "en": "Here we say autocarro and paragem."
+              }
+            ],
+            "image": {
+              "key": "p5_onibus_sidescene",
+              "personalized": true
+            }
+          }
+        },
+        {
+          "choice_index": 2,
+          "text_en": "She kindly walks you to the toilet. Nice, but now you're running late!",
+          "reteach_pt": "Onde fica a paragem do autocarro?",
+          "reteach_en": "Where is the bus stop?",
+          "return": 5,
+          "side_scene": {
+            "narration_en": "She kindly walks you all the way to the station toilets and waits outside, proud to help. You come out and she's still there, beaming.",
+            "lines": [
+              {
+                "speaker": "senhora",
+                "pt": "É aqui! De nada!",
+                "en": "It's here! You're welcome!"
+              },
+              {
+                "speaker": "senhora",
+                "pt": "Mais alguma coisa?",
+                "en": "Anything else?"
+              }
+            ],
+            "image": {
+              "key": "p5_casadebanho_sidescene",
+              "personalized": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "narration_en": "You reach the bus stop outside São Bento Station. A bus is waiting. You need to get to Avenida de França. Ask whether this bus goes there.",
+      "lines": [
+        {
+          "speaker": "senhora",
+          "pt": "É ali, à direita.",
+          "en": "It's over there, on the right."
+        }
+      ],
+      "choices": [
+        {
+          "text_pt": "Este autocarro vai para a Avenida de França?",
+          "text_en": "Does this bus go to Avenida de França?",
+          "target": 9,
+          "correct": true
+        },
+        {
+          "text_pt": "Este autocarro é bonito?",
+          "text_en": "Is this bus pretty?",
+          "target": 6,
+          "correct": false
+        }
+      ],
+      "image": {
+        "key": "saobento_bus",
+        "personalized": true
+      },
+      "dead_ends": [
+        {
+          "choice_index": 1,
+          "text_en": "The driver says proudly: 'É lindo, sim!' and drives off. Wait for the next one.",
+          "reteach_pt": "Este autocarro vai para a Avenida de França?",
+          "reteach_en": "Does this bus go to Avenida de França?",
+          "return": 6,
+          "side_scene": {
+            "narration_en": "The driver beams: 'É lindo, sim!' He pats the dashboard, closes the door and drives off, very happy. You wait for the next bus with a pigeon for company.",
+            "lines": [
+              {
+                "speaker": "motorista",
+                "pt": "É lindo, sim! Obrigado!",
+                "en": "It's beautiful, yes! Thank you!"
+              }
+            ],
+            "image": {
+              "key": "p6_bonito_sidescene",
+              "personalized": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "narration_en": "You arrive at the AIMA store (Loja AIMA) on Avenida de França. There's a security guard at the door.",
+      "lines": [
+        {
+          "speaker": "segurança",
+          "pt": "Bom dia. Tem agendamento?",
+          "en": "Good morning. Do you have an appointment?"
+        }
+      ],
+      "choices": [
+        {
+          "text_pt": "Sim, tenho um agendamento às dez.",
+          "text_en": "Yes, I have an appointment at ten.",
+          "target": 10,
+          "correct": true
+        },
+        {
+          "text_pt": "Sim, tenho dez anos.",
+          "text_en": "Yes, I'm ten years old.",
+          "target": 9,
+          "correct": false
+        }
+      ],
+      "image": {
+        "key": "aima_entrance",
+        "personalized": true
+      },
+      "dead_ends": [
+        {
+          "choice_index": 1,
+          "text_en": "The guard: 'Dez anos? Tem muita altura para dez anos!' (You're very tall for ten!)",
+          "reteach_pt": "Tenho um agendamento às dez.",
+          "reteach_en": "I have an appointment at ten.",
+          "return": 9,
+          "side_scene": {
+            "narration_en": "The guard looks you up and down, very seriously. 'Dez anos?' Then he bursts out laughing and calls a colleague over to share the joke.",
+            "lines": [
+              {
+                "speaker": "segurança",
+                "pt": "Dez anos? Tem muita altura para dez anos!",
+                "en": "Ten years old? You're very tall for ten!"
+              },
+              {
+                "speaker": "segurança",
+                "pt": "Tem agendamento às dez, não é?",
+                "en": "You have an appointment at ten, right?"
+              }
+            ],
+            "image": {
+              "key": "p9_dezanos_sidescene",
+              "personalized": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "narration_en": "The guard wants to see your appointment letter (convocatória).",
+      "lines": [
+        {
+          "speaker": "segurança",
+          "pt": "Tem a convocatória?",
+          "en": "Do you have the appointment letter?"
+        }
+      ],
+      "choices": [
+        {
+          "text_pt": "Sim, está no telemóvel.",
+          "text_en": "Yes, it's on my phone.",
+          "target": 12,
+          "correct": true
+        },
+        {
+          "text_pt": "Sim, está no celular.",
+          "text_en": "Yes, it's on my cell phone. (Brazilian)",
+          "target": 10,
+          "correct": false
+        }
+      ],
+      "image": {
+        "key": "aima_phone",
+        "personalized": true
+      },
+      "dead_ends": [
+        {
+          "choice_index": 1,
+          "text_en": "The guard laughs: 'Celular? Aqui dizemos telemóvel.'",
+          "reteach_pt": "Está no telemóvel.",
+          "reteach_en": "It's on my phone.",
+          "return": 10,
+          "side_scene": {
+            "narration_en": "The guard tilts his head: 'Celular?' A man in the queue behind you joins in, and soon three people are teaching you the word.",
+            "lines": [
+              {
+                "speaker": "segurança",
+                "pt": "Celular? Aqui dizemos telemóvel.",
+                "en": "Cell phone? Here we say telemóvel."
+              },
+              {
+                "speaker": "senhor na fila",
+                "pt": "Te-le-mó-vel!",
+                "en": "Te-le-mó-vel!"
+              }
+            ],
+            "image": {
+              "key": "p10_celular_sidescene",
+              "personalized": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "narration_en": "You're in the waiting room of the AIMA store. An older lady next to you starts chatting. Tip: with strangers use 'o senhor / a senhora'; 'tu' is informal.",
+      "lines": [
+        {
+          "speaker": "senhora",
+          "pt": "Está à espera há muito tempo? Parece {cansado}.",
+          "en": "Have you been waiting long? You look tired."
+        }
+      ],
+      "choices": [
+        {
+          "text_pt": "Estou a esperar há vinte minutos.",
+          "text_en": "I've been waiting for twenty minutes.",
+          "target": 15,
+          "correct": true
+        },
+        {
+          "text_pt": "Estou esperando há vinte minutos.",
+          "text_en": "I've been waiting for twenty minutes. (Brazilian structure)",
+          "target": 12,
+          "correct": false
+        }
+      ],
+      "image": {
+        "key": "aima_waiting",
+        "personalized": true
+      },
+      "dead_ends": [
+        {
+          "choice_index": 1,
+          "text_en": "The lady: 'Esperando? Isso é do Brasil! Em Portugal: estou a esperar.'",
+          "reteach_pt": "Estou a esperar.",
+          "reteach_en": "I'm waiting.",
+          "return": 12,
+          "side_scene": {
+            "narration_en": "The older lady gasps, then laughs and pulls a little notebook from her bag. She writes it down for you, very slowly, like a teacher.",
+            "lines": [
+              {
+                "speaker": "senhora",
+                "pt": "Esperando? Isso é do Brasil!",
+                "en": "Esperando? That's from Brazil!"
+              },
+              {
+                "speaker": "senhora",
+                "pt": "Em Portugal: estou a esperar.",
+                "en": "In Portugal: estou a esperar."
+              }
+            ],
+            "image": {
+              "key": "p12_esperando_sidescene",
+              "personalized": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "narration_en": "Your number appears on the screen. You go to the counter (balcão).",
+      "lines": [
+        {
+          "speaker": "funcionária",
+          "pt": "Bom dia. O seu passaporte, se faz favor.",
+          "en": "Good morning. Your passport, please."
+        }
+      ],
+      "choices": [
+        {
+          "text_pt": "Aqui está.",
+          "text_en": "Here you go.",
+          "target": 18,
+          "correct": true
+        },
+        {
+          "text_pt": "Aqui está o meu pequeno-almoço.",
+          "text_en": "Here is my breakfast.",
+          "target": 15,
+          "correct": false
+        }
+      ],
+      "image": {
+        "key": "aima_counter_passport",
+        "personalized": true
+      },
+      "dead_ends": [
+        {
+          "choice_index": 1,
+          "text_en": "You hand over a croissant. The clerk: 'Obrigada, mas prefiro o passaporte.'",
+          "reteach_pt": "Aqui está.",
+          "reteach_en": "Here you go.",
+          "return": 15,
+          "side_scene": {
+            "narration_en": "You reach into your bag and hand over... a croissant. The clerk stares at it, then smiles and pretends to take a tiny bite.",
+            "lines": [
+              {
+                "speaker": "funcionária",
+                "pt": "Obrigada, mas prefiro o passaporte.",
+                "en": "Thank you, but I prefer the passport."
+              }
+            ],
+            "image": {
+              "key": "p15_pequenoalmoco_sidescene",
+              "personalized": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "narration_en": "The clerk asks for proof of address. If you rent, a declaration from your landlord works. She speaks fast.",
+      "lines": [
+        {
+          "speaker": "funcionária",
+          "pt": "Tem o comprovativo de morada?",
+          "en": "Do you have proof of address?"
+        }
+      ],
+      "choices": [
+        {
+          "text_pt": "Sim, tenho o comprovativo de morada.",
+          "text_en": "Yes, I have proof of address.",
+          "target": 21,
+          "correct": true
+        },
+        {
+          "text_pt": "Pode falar mais devagar, por favor?",
+          "text_en": "Could you speak more slowly, please?",
+          "target": 18,
+          "correct": false,
+          "kind": "helpful"
+        },
+        {
+          "text_pt": "Sim, tenho uma morada muito bonita.",
+          "text_en": "Yes, I have a very pretty address.",
+          "target": 18,
+          "correct": false
+        }
+      ],
+      "image": {
+        "key": "aima_counter_documents",
+        "personalized": true
+      },
+      "dead_ends": [
+        {
+          "choice_index": 1,
+          "text_en": "Great sentence, this is a helpful side path, not a mistake! The clerk repeats slowly: 'Com-pro-va-ti-vo de mo-ra-da.' Now answer her.",
+          "reteach_pt": "Sim, tenho o comprovativo de morada.",
+          "reteach_en": "Yes, I have proof of address.",
+          "return": 18,
+          "side_scene": {
+            "narration_en": "The clerk smiles and slows right down, one syllable at a time. The man at the next counter starts listening too.",
+            "lines": [
+              {
+                "speaker": "funcionária",
+                "pt": "Claro! Com-pro-va-ti-vo de mo-ra-da.",
+                "en": "Of course! Proof of address."
+              }
+            ],
+            "image": {
+              "key": "p18_devagar_sidescene",
+              "personalized": true
+            }
+          }
+        },
+        {
+          "choice_index": 2,
+          "text_en": "The clerk: 'Que bom! Mas preciso do papel.' (How nice! But I need the paper.)",
+          "reteach_pt": "Sim, tenho o comprovativo de morada.",
+          "reteach_en": "Yes, I have proof of address.",
+          "return": 18,
+          "side_scene": {
+            "narration_en": "The clerk's eyes light up. 'Muito bonita? Onde?' She asks about your street, your balcony, your view... and then gently holds out her hand for the paper.",
+            "lines": [
+              {
+                "speaker": "funcionária",
+                "pt": "Que bom! Mas preciso do papel.",
+                "en": "How nice! But I need the paper."
+              }
+            ],
+            "image": {
+              "key": "p18_moradabonita_sidescene",
+              "personalized": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "narration_en": "Now the biometrics: your photo. The clerk points at the camera.",
+      "lines": [
+        {
+          "speaker": "funcionária",
+          "pt": "Olhe para a câmara, por favor. Não sorria.",
+          "en": "Look at the camera, please. Don't smile."
+        }
+      ],
+      "choices": [
+        {
+          "text_pt": "Está bem.",
+          "text_en": "Okay.",
+          "target": 24,
+          "correct": true
+        },
+        {
+          "text_pt": "Sorrio muito!",
+          "text_en": "I smile a lot!",
+          "target": 21,
+          "correct": false
+        }
+      ],
+      "image": {
+        "key": "aima_camera",
+        "personalized": true
+      },
+      "dead_ends": [
+        {
+          "choice_index": 1,
+          "text_en": "Your photo shows a giant grin. Clerk: 'Muito simpático, mas outra vez.' (Very sweet, but again.)",
+          "reteach_pt": "Está bem.",
+          "reteach_en": "Okay.",
+          "return": 21,
+          "side_scene": {
+            "narration_en": "Flash! The photo on the screen shows the biggest grin in AIMA history. The clerk turns the screen toward you, trying not to laugh.",
+            "lines": [
+              {
+                "speaker": "funcionária",
+                "pt": "Muito simpático, mas outra vez.",
+                "en": "Very sweet, but again."
+              },
+              {
+                "speaker": "funcionária",
+                "pt": "Sem sorrir, por favor.",
+                "en": "Without smiling, please."
+              }
+            ],
+            "image": {
+              "key": "p21_sorriso_sidescene",
+              "personalized": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "narration_en": "Fingerprints next.",
+      "lines": [
+        {
+          "speaker": "funcionária",
+          "pt": "Coloque o dedo aqui, por favor.",
+          "en": "Put your finger here, please."
+        }
+      ],
+      "choices": [
+        {
+          "text_pt": "Este dedo?",
+          "text_en": "This finger?",
+          "target": 27,
+          "correct": true
+        },
+        {
+          "text_pt": "Coloco o pé?",
+          "text_en": "Should I put my foot?",
+          "target": 24,
+          "correct": false
+        }
+      ],
+      "image": {
+        "key": "aima_fingerprint",
+        "personalized": true
+      },
+      "dead_ends": [
+        {
+          "choice_index": 1,
+          "text_en": "The clerk tries not to laugh: 'O pé não, o dedo!'",
+          "reteach_pt": "Este dedo?",
+          "reteach_en": "This finger?",
+          "return": 24,
+          "side_scene": {
+            "narration_en": "You start untying your shoe. The clerk waves both hands, laughing, and the whole waiting room turns to look.",
+            "lines": [
+              {
+                "speaker": "funcionária",
+                "pt": "O pé não, o dedo!",
+                "en": "Not the foot, the finger!"
+              }
+            ],
+            "image": {
+              "key": "p24_pe_sidescene",
+              "personalized": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "narration_en": "All done. The clerk tells you what happens next.",
+      "lines": [
+        {
+          "speaker": "funcionária",
+          "pt": "Está concluído. Vai receber um e-mail.",
+          "en": "All done. You'll receive an email."
+        }
+      ],
+      "choices": [
+        {
+          "text_pt": "{obrigado}! Bom dia!",
+          "text_en": "Thank you! Have a good day!",
+          "target": 30,
+          "correct": true
+        },
+        {
+          "text_pt": "De nada!",
+          "text_en": "You're welcome!",
+          "target": 27,
+          "correct": false
+        }
+      ],
+      "image": {
+        "key": "aima_done",
+        "personalized": true
+      },
+      "dead_ends": [
+        {
+          "choice_index": 1,
+          "text_en": "The clerk is puzzled: 'De nada? Eu é que ajudei!' (I'm the one who helped!) To say thanks: obrigado (if you're a man) / obrigada (if you're a woman).",
+          "reteach_pt": "{obrigado}!",
+          "reteach_en": "Thank you!",
+          "return": 27,
+          "side_scene": {
+            "narration_en": "The clerk blinks, then laughs: 'De nada? Eu é que ajudei!' She thanks you back anyway, and you both end up thanking each other three times.",
+            "lines": [
+              {
+                "speaker": "funcionária",
+                "pt": "De nada? Eu é que ajudei!",
+                "en": "You're welcome? I'm the one who helped!"
+              },
+              {
+                "speaker": "funcionária",
+                "pt": "Diga: {obrigado}!",
+                "en": "Say: {obrigado}!"
+              }
+            ],
+            "image": {
+              "key": "p27_denada_sidescene",
+              "personalized": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "narration_en": "Celebration! You walk down to the Ribeira, with the Dom Luís I bridge in front of you, and sit at a riverside café. Either order is a happy ending.",
+      "lines": [
+        {
+          "speaker": "empregado",
+          "pt": "Boa tarde! O que deseja?",
+          "en": "Good afternoon! What would you like?"
+        }
+      ],
+      "choices": [
+        {
+          "text_pt": "Um café, se faz favor.",
+          "text_en": "A coffee, please.",
+          "target": "END",
+          "correct": true,
+          "ending": "cafe"
+        },
+        {
+          "text_pt": "Uma francesinha, se faz favor.",
+          "text_en": "A francesinha, please.",
+          "target": "END",
+          "correct": true,
+          "ending": "francesinha"
+        }
+      ],
+      "image": {
+        "key": "ribeira_domluis",
+        "personalized": true
+      }
+    }
+  ],
+  "endings": {
+    "cafe": {
+      "title_en": "Café au Douro",
+      "text_en": "The coffee arrives, small, strong and perfect. You made it: you got through the AIMA appointment in Portuguese. Welcome to Porto!",
+      "image": {
+        "key": "ribeira_cafe",
+        "personalized": true
+      }
+    },
+    "francesinha": {
+      "title_en": "Francesinha time",
+      "text_en": "A steaming francesinha lands on your table, the most Porto thing you could order. You earned it. Welcome to Porto!",
+      "image": {
+        "key": "ribeira_francesinha",
+        "personalized": true
+      }
+    }
+  },
+  "srs_cards": [
+    {
+      "id": "c1",
+      "pt": "Bom dia! Desculpe...",
+      "en": "Good morning! Excuse me...",
+      "hint_en": "How to start talking to a stranger"
+    },
+    {
+      "id": "c2",
+      "pt": "Onde fica a paragem do autocarro?",
+      "en": "Where is the bus stop?",
+      "hint_en": "Not 'ônibus'"
+    },
+    {
+      "id": "c3",
+      "pt": "Este autocarro vai para a Avenida de França?",
+      "en": "Does this bus go to Avenida de França?",
+      "hint_en": "vai para = goes to"
+    },
+    {
+      "id": "c4",
+      "pt": "Tenho um agendamento às dez.",
+      "en": "I have an appointment at ten.",
+      "hint_en": "anos = years of age!"
+    },
+    {
+      "id": "c5",
+      "pt": "Está no telemóvel.",
+      "en": "It's on my phone.",
+      "hint_en": "Not 'celular'"
+    },
+    {
+      "id": "c6",
+      "pt": "Estou a esperar.",
+      "en": "I'm waiting.",
+      "hint_en": "estar a + infinitive"
+    },
+    {
+      "id": "c7",
+      "pt": "Aqui está.",
+      "en": "Here you go.",
+      "hint_en": "When handing over a document"
+    },
+    {
+      "id": "c8",
+      "pt": "Tenho o comprovativo de morada.",
+      "en": "I have proof of address.",
+      "hint_en": "morada = address"
+    },
+    {
+      "id": "c9",
+      "pt": "Pode falar mais devagar, por favor?",
+      "en": "Could you speak more slowly, please?",
+      "hint_en": "devagar = slowly"
+    },
+    {
+      "id": "c10",
+      "pt": "Olhe para a câmara.",
+      "en": "Look at the camera.",
+      "hint_en": "Heard at the photo step (dialogue card)"
+    },
+    {
+      "id": "c11",
+      "pt": "{obrigado}!",
+      "en": "Thank you!",
+      "hint_en": "Man: obrigado, woman: obrigada"
+    },
+    {
+      "id": "c12",
+      "pt": "Um café, se faz favor.",
+      "en": "A coffee, please.",
+      "hint_en": "se faz favor = please"
+    }
+  ]
+}

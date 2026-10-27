@@ -1,0 +1,190 @@
+{
+  "version": "aima-01.v1",
+  "model": "grok-imagine-image",
+  "fallback_models": [
+    "grok-imagine-image-2.0"
+  ],
+  "style_block": "Full-bleed edge-to-edge illustration filling the entire frame, no borders, no panel frame, no margins, no side bars. Warm cartoon illustration, clean ink outlines, soft cel shading, rich saturated colors, friendly cinematic framing, no text, no logos, no watermarks. The person in the reference photo is the main character: keep their face, hair, skin tone and glasses/beard clearly recognizable and flattering, same character in every image. Illustration, not photorealistic. No speech bubbles, no captions, no subtitles, no text anywhere in the image. Vertical 3:4 portrait framing, main character shown head to knees filling the tall frame, scene composed vertically.",
+  "outfit": "a mustard-yellow jacket over a white t-shirt, dark jeans, white sneakers, a small brown crossbody bag",
+  "side_characters": {
+    "local_woman": "a friendly middle-aged woman with short grey hair, wearing a green knitted cardigan over a cream blouse and a dark grey skirt",
+    "clerk": "a friendly female clerk in her 30s with dark hair in a bun, wearing a navy blouse",
+    "security_guard": "a calm security guard wearing a dark navy uniform without any badge text",
+    "bus_driver": "a cheerful bus driver in his 40s with a short beard, wearing a plain dark-blue uniform shirt without any badge text",
+    "second_woman": "a second friendly woman in her 30s with long dark wavy hair, wearing a plain red coat (no yellow, no mustard)",
+    "queue_man": "an elderly man in the queue with white hair, round glasses and a flat cap, wearing a grey sweater and brown trousers",
+    "older_lady": "a kind older lady in her 70s with white curly hair and round glasses, wearing a lilac cardigan and a light grey skirt",
+    "queue_person_2": "a friendly young person in the queue with a blue backpack, wearing a dark green hoodie and black jeans"
+  },
+  "placeholders": {
+    "{genero_desc}": "\"a man\" (genero m) or \"a woman\" (genero f), resolved in code",
+    "{aparencia}": "user appearance text, optional",
+    "{kiyafet}": "replaced with outfit",
+    "side_characters": "{bus_driver}, {second_woman}, {queue_man}, {queue_person_2}, {older_lady}, {local_woman}, {clerk}, {security_guard}: Worker, side_characters tarifleriyle değiştirir"
+  },
+  "scenes": {
+    "saobento_azulejos": {
+      "chapter_id": "aima-01",
+      "page": 1,
+      "kind": "main",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, standing in the grand entrance hall of Porto São Bento railway station, surrounded by huge blue-and-white azulejo tile murals, holding a smartphone and looking around curiously, {local_woman} next to them smiling warmly with a friendly wave, soft daylight from tall windows, warm mood."
+    },
+    "saobento_asking": {
+      "chapter_id": "aima-01",
+      "page": 5,
+      "kind": "main",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, in the São Bento station hall, politely turning to {local_woman}, pointing questioningly at a map-less street, while she points helpfully toward the exit, blue azulejo tiles in the background, morning light, warm and slightly comic mood."
+    },
+    "saobento_bus": {
+      "chapter_id": "aima-01",
+      "page": 6,
+      "kind": "main",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at a city bus stop on the street just outside Porto São Bento station, the station's stone façade behind, a city bus waiting at the curb with its door open, the character leaning toward {bus_driver} to ask a question, morning street life, no readable signs."
+    },
+    "aima_entrance": {
+      "chapter_id": "aima-01",
+      "page": 9,
+      "kind": "main",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, arriving at the entrance of a modern, tidy public service office building on Avenida de França in Porto, {security_guard} at the door greeting them, glass doors, no logos, no readable signs, morning light."
+    },
+    "aima_phone": {
+      "chapter_id": "aima-01",
+      "page": 10,
+      "kind": "main",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at the office entrance showing an appointment letter on their smartphone screen to {security_guard}, who leans in to look, the phone screen shows only blurred shapes, no readable text, light humor."
+    },
+    "aima_waiting": {
+      "chapter_id": "aima-01",
+      "page": 12,
+      "kind": "main",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, sitting in a bright, orderly waiting room with rows of chairs, sitting beside and smiling with {older_lady} seated next to them, a number display screen on the wall showing only abstract shapes, looking a little tired but amused, cozy everyday mood."
+    },
+    "aima_counter_passport": {
+      "chapter_id": "aima-01",
+      "page": 15,
+      "kind": "main",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at a service counter handing a passport to {clerk} behind the counter, plain neutral office, no logos, no readable text, polite and cheerful mood."
+    },
+    "aima_counter_documents": {
+      "chapter_id": "aima-01",
+      "page": 18,
+      "kind": "main",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at the service counter holding a folder of papers, listening carefully with a slightly puzzled face as {clerk} explains something, plain office, no logos, no readable text."
+    },
+    "aima_camera": {
+      "chapter_id": "aima-01",
+      "page": 21,
+      "kind": "main",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, standing at a service counter in a plain, tidy office, looking straight at a small camera on the counter with a serious but slightly nervous expression, neutral beige walls, {clerk} seen partly from behind, no signs, no logos, no readable text, light humor."
+    },
+    "aima_fingerprint": {
+      "chapter_id": "aima-01",
+      "page": 24,
+      "kind": "main",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at the service counter placing a fingertip on a small fingerprint scanner, {clerk} gesturing helpfully, plain office, no logos, no readable text, light humor."
+    },
+    "aima_done": {
+      "chapter_id": "aima-01",
+      "page": 27,
+      "kind": "main",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at the service counter smiling with relief, smiling with gratitude at {clerk}, a small grateful bow, the passport handed back, plain office, warm sense of accomplishment, no logos, no readable text."
+    },
+    "ribeira_domluis": {
+      "chapter_id": "aima-01",
+      "page": 30,
+      "kind": "main",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, sitting at a small café table on the Ribeira riverside in Porto at golden-hour sunset, the Dom Luís I double-deck iron bridge and the Douro river glowing behind, colorful old-town houses, a friendly waiter approaching, happy relaxed smile, celebratory mood."
+    },
+    "ribeira_cafe": {
+      "chapter_id": "aima-01",
+      "page": 30,
+      "kind": "ending",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at a small café table on the Ribeira riverside in Porto, holding a tiny espresso cup and smiling proudly, the Dom Luís I bridge and the Douro behind in warm sunset light, celebratory mood."
+    },
+    "ribeira_francesinha": {
+      "chapter_id": "aima-01",
+      "page": 30,
+      "kind": "ending",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at a café table on the Ribeira riverside in Porto, a big steaming francesinha sandwich with melted cheese and sauce on the table in front of them, delighted smile, the Dom Luís I bridge and the Douro behind in golden-hour light, celebratory mood."
+    },
+    "p5_casadebanho_sidescene": {
+      "chapter_id": "aima-01",
+      "page": 5,
+      "kind": "side",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, in a corridor of São Bento station, {local_woman} proudly gesturing toward a door with a generic toilet pictogram (no text), the main character looking embarrassed and amused, warm comic mood."
+    },
+    "p6_bonito_sidescene": {
+      "chapter_id": "aima-01",
+      "page": 6,
+      "kind": "side",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at the bus stop outside Porto São Bento station, a city bus pulling away with {bus_driver} waving proudly through the window, the main character left on the curb with a pigeon beside them, stone station façade behind, no readable signs, light comic mood."
+    },
+    "p9_dezanos_sidescene": {
+      "chapter_id": "aima-01",
+      "page": 9,
+      "kind": "side",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at the entrance of a modern public service office on Avenida de França in Porto, {security_guard} laughing kindly and holding a hand up as if measuring the main character's height, the main character laughing along, glass doors, no logos, no readable signs."
+    },
+    "p15_pequenoalmoco_sidescene": {
+      "chapter_id": "aima-01",
+      "page": 15,
+      "kind": "side",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at a service counter, {clerk} holding a croissant with a surprised, amused expression, the main character blushing and digging in their bag for a passport, plain neutral office, no logos, no readable text, comic mood."
+    },
+    "p18_devagar_sidescene": {
+      "chapter_id": "aima-01",
+      "page": 18,
+      "kind": "side",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at a service counter, {clerk} leaning in kindly with a patient, exaggerated friendly expression, holding up a blank sheet of paper, the main character listening carefully and nodding, plain office, no readable text, warm mood."
+    },
+    "p18_moradabonita_sidescene": {
+      "chapter_id": "aima-01",
+      "page": 18,
+      "kind": "side",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at a service counter, the main character showing a phone photo of a pretty Porto street with colourful tiled façades (no text), {clerk} admiring it and then holding out her hand for a document, plain office, no logos, light comic mood."
+    },
+    "p21_sorriso_sidescene": {
+      "chapter_id": "aima-01",
+      "page": 21,
+      "kind": "side",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at a service counter with a small camera, {clerk} turning a monitor toward the main character, the monitor shows a cartoonish huge grin of the main character (no text), the main character laughing, plain office, comic mood."
+    },
+    "p24_pe_sidescene": {
+      "chapter_id": "aima-01",
+      "page": 24,
+      "kind": "side",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at a service counter with a small fingerprint scanner, the main character bending down to untie a sneaker, {clerk} laughing and waving both hands to stop them, people in the waiting room behind smiling, plain office, no readable text, comic mood."
+    },
+    "p27_denada_sidescene": {
+      "chapter_id": "aima-01",
+      "page": 27,
+      "kind": "side",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at a service counter, {clerk} and the main character both bowing slightly and laughing, an endless polite thank-you moment, plain office, no logos, no readable text, warm comic mood."
+    },
+    "p1_boanoite_sidescene": {
+      "chapter_id": "aima-01",
+      "page": 1,
+      "kind": "side",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, in the São Bento station hall with bright morning sunlight streaming in, {local_woman} walking away laughing and pointing up at the sunlight, the main character left standing with an awkward grin, while {second_woman} in the background smiles at them, blue azulejo tiles behind, light comic mood."
+    },
+    "p5_estacao_sidescene": {
+      "chapter_id": "aima-01",
+      "page": 5,
+      "kind": "side",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, in the São Bento station hall, {local_woman} laughing and spreading her arms wide to show the grand tiled hall around them, the main character looking around sheepishly with a sudden realization, blue azulejo tiles behind, warm comic mood."
+    },
+    "p10_computador_sidescene": {
+      "chapter_id": "aima-01",
+      "page": 10,
+      "kind": "side",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, at the office entrance, a single security guard, {security_guard}, standing and comically peering around the main character as if searching for a laptop (only one guard in the scene, drawn once), {queue_man} pointing at the smartphone in the main character's hand (screen blurred, no text), the main character amused, no logos, light humor."
+    },
+    "p12_vinteanos_sidescene": {
+      "chapter_id": "aima-01",
+      "page": 12,
+      "kind": "side",
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, in a bright waiting room with rows of chairs, {older_lady} laughing heartily and patting the main character's hand, a few other people in the background turning around with amused smiles, the main character laughing along, cozy comic mood."
+    }
+  },
+  "aspect_ratio": "3:4"
+}

@@ -1,0 +1,31 @@
+"$schema" = "./node_modules/wrangler/config-schema.json"
+name = "bem-vindo-api"
+main = "src/index.ts"
+compatibility_date = "2026-10-27"
+compatibility_flags = ["nodejs_compat"]
+upload_source_maps = true
+
+# Günlük kotanın sayısal tavanı. Sayaç KV (USAGE) içinde; bkz. src/usage.ts.
+[vars]
+IMAGE_DAILY_LIMIT = "120"
+SCENE_DAILY_LIMIT = "300"
+
+# Değerler wrangler secret put ile verilir. Repoda ve bu dosyada yok.
+[secrets]
+required = ["XAI_API_KEY", "DEVICE_TOKENS"]
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+
+[observability.traces]
+enabled = true
+head_sampling_rate = 1
+
+# Cihaz başına günlük kota sayacı (anahtar: sha256(token):kind:YYYY-MM-DD UTC).
+[[kv_namespaces]]
+binding = "USAGE"
+id = "0090e56d087f41a6877fa154e3b95566"
