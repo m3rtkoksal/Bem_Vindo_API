@@ -133,7 +133,7 @@ test("v2-scifi: 34 keys, 7 new keys present, one chapter, version set", () => {
 
 test("v2-scifi: yellow only on the umbrella; main outfit has no yellow; screens/clocks blank", () => {
   assert.equal(/yellow|mustard/i.test(prompts.outfit.replace(/\(no yellow[^)]*\)/, "")), false);
-  assert.match(prompts.style_block, /clock faces and screens blurred or blank/);
+  assert.match(prompts.style_block, /No clocks or watches are visible unless the scene explicitly asks for one/);
   assert.equal(PLACEHOLDER.test(prompts.style_block), false);
   for (const [key, scene] of Object.entries(prompts.scenes)) {
     for (const m of scene.prompt.matchAll(/yellow\s+(\w+)/gi)) assert.equal(m[1]?.toLowerCase(), "umbrella", key);
