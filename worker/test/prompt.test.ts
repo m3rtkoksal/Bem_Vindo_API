@@ -22,10 +22,10 @@ test("side characters, then aparencia and kiyafet, then style block", () => {
 
   assert.match(
     prompts.style_block,
-    /No speech bubbles, no captions, no subtitles, no text anywhere in the image/,
+    /no speech bubbles, no captions, no subtitles, no text anywhere in the image/i,
   );
   assert.match(built, /short dark hair, round glasses/);
-  assert.match(built, /mustard-yellow jacket/);
+  assert.match(built, /dark olive-green jacket/);
   assert.match(built, /friendly middle-aged woman with short grey hair/);
   assert.ok(built.endsWith(prompts.style_block));
   assert.equal(built.includes("{local_woman}"), false);
@@ -38,7 +38,7 @@ test("every shipped scene resolves without a leftover placeholder", () => {
   for (const [key, scene] of Object.entries(prompts.scenes)) {
     const built = buildImagePrompt(prompts, scene.prompt, "short dark hair", "m");
     assert.equal(PLACEHOLDER.test(built), false, key);
-    assert.match(built, /mustard-yellow jacket/, key);
+    assert.match(built, /dark olive-green jacket/, key);
     assert.ok(built.endsWith(prompts.style_block), key);
   }
 });
@@ -100,12 +100,43 @@ test("side characters come only from placeholders, never inline or yellow", () =
     // Sayı vurgusu ("a single security guard", "only one guard") izinli; tarif yine placeholder'dan gelir.
     const stripped = scene.prompt
       .replace(/\{[A-Za-z0-9_]+\}/g, "")
-      .replace(/a single security guard|only one guard/g, "");
+      .replace(/a single security guard|only one guard|driver seat/g, "");
     assert.equal(inline.test(stripped), false, key);
   }
   for (const [name, desc] of Object.entries(prompts.side_characters)) {
     assert.equal(/not wearing/i.test(desc), false, name);
-    assert.equal(/yellow|mustard/i.test(desc.replace("(no yellow, no mustard)", "")), false, name);
+    assert.equal(
+      /yellow|mustard/i.test(desc.replace("(no yellow, no mustard)", "").replace("carrying a yellow umbrella", "")),
+      false,
+      name,
+    );
     assert.match(desc, /wearing/, name);
+  }
+});
+
+const V2_NEW_KEYS = [
+  "saobento_banco_despertar",
+  "p0_denada_sidescene",
+  "saobento_guardachuva",
+  "p3_tu_sidescene",
+  "domluis_meianoite",
+  "p33_bomdia_sidescene",
+  "saobento_reset_nota",
+];
+
+test("v2-scifi: 34 keys, 7 new keys present, one chapter, version set", () => {
+  assert.equal(prompts.version, "aima-01.v2-scifi");
+  assert.equal(Object.keys(prompts.scenes).length, 34);
+  for (const key of V2_NEW_KEYS) assert.ok(prompts.scenes[key], key);
+  for (const [key, scene] of Object.entries(prompts.scenes)) assert.equal(scene.chapter_id, "aima-01", key);
+});
+
+test("v2-scifi: yellow only on the umbrella; main outfit has no yellow; screens/clocks blank", () => {
+  assert.equal(/yellow|mustard/i.test(prompts.outfit.replace(/\(no yellow[^)]*\)/, "")), false);
+  assert.match(prompts.style_block, /clock faces and screens blurred or blank/);
+  assert.equal(PLACEHOLDER.test(prompts.style_block), false);
+  for (const [key, scene] of Object.entries(prompts.scenes)) {
+    for (const m of scene.prompt.matchAll(/yellow\s+(\w+)/gi)) assert.equal(m[1]?.toLowerCase(), "umbrella", key);
+    assert.equal(/mustard/i.test(scene.prompt), false, key);
   }
 });

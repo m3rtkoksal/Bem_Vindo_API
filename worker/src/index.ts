@@ -229,7 +229,11 @@ async function handleImage(
       image_key: imageRequest.imageKey,
     });
     return json(
-      { image_base64: edited.imageBase64, mime_type: edited.mimeType },
+      {
+        image_base64: edited.imageBase64,
+        mime_type: edited.mimeType,
+        prompts_version: prompts.version,
+      },
       200,
     );
   } catch (error) {
