@@ -30,13 +30,13 @@
       "chapter_id": "aima-01",
       "page": 0,
       "kind": "main",
-      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, just waking up on a wooden bench in the grand São Bento station hall, blinking and looking around in confusion while holding a smartphone (screen dark), morning light through tall windows, blue-and-white azulejo murals; nearby {raincoat_man} lowering a newspaper with blurred, unreadable pages and watching them calmly, as if expected."
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, on a wooden bench in the grand São Bento station hall, waking up with a startled look, looking around in confusion, both hands empty (no phone, no objects in hands), morning light through tall windows, blue-and-white azulejo murals; nearby {raincoat_man} standing nearby, lowering a newspaper with blurred, unreadable pages and looking directly at the main character, watching them calmly, as if expected."
     },
     "p0_denada_sidescene": {
       "chapter_id": "aima-01",
       "page": 0,
       "kind": "side",
-      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, on a wooden bench in the São Bento station hall, {raincoat_man} holding a folded newspaper and frowning comically at his wristwatch, the main character sitting up sleepily and laughing, a big station clock in soft focus behind, cinematic morning haze, uncanny but funny mood."
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, on a wooden bench in the São Bento station hall, {raincoat_man} holding a folded newspaper and frowning comically at his wristwatch, the main character sitting up sleepily and laughing, a big station clock far out of focus, blurred, no readable numerals, cinematic morning haze, uncanny but funny mood."
     },
     "saobento_guardachuva": {
       "chapter_id": "aima-01",
@@ -66,7 +66,7 @@
       "chapter_id": "aima-01",
       "page": 5,
       "kind": "main",
-      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, in the São Bento station hall, the main character asking {local_woman} for directions with an open hand gesture, a station clock in soft focus behind with hands a few minutes off."
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, in the São Bento station hall, the main character asking {local_woman} for directions with an open hand gesture, blue-and-white azulejo murals behind, soft morning light."
     },
     "p5_estacao_sidescene": {
       "chapter_id": "aima-01",
@@ -120,7 +120,7 @@
       "chapter_id": "aima-01",
       "page": 12,
       "kind": "main",
-      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, in a bright waiting room with rows of chairs, {older_lady} leaning close and whispering to the main character, both glancing at a wall clock, other people in the room oddly still."
+      "prompt": "Using the person in the reference photo as the main character ({genero_desc}, {aparencia}), wearing {kiyafet}, in a bright waiting room with rows of chairs, {older_lady} leaning close and whispering to the main character, both glancing at a wall clock far out of focus, blurred, no readable numerals, other people in the room oddly still."
     },
     "p12_vinteanos_sidescene": {
       "chapter_id": "aima-01",
